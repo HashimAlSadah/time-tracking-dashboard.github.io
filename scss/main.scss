@@ -1,0 +1,239 @@
+@import "./config";
+
+.main{
+    padding: 2em;
+    @include atMediaQ($min-width: 620px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
+
+    @include atMediaQ(900px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include atMediaQ(1000px){
+        max-width: 1200px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+}
+
+.user{
+
+    background-color: $dark-blue;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    @include atMediaQ(620px){
+        grid-column: 1 / -1;
+    }
+
+    @include atMediaQ(1000px){
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    & > *{ 
+        padding: 1.5em;
+    }
+
+    &__info{
+        flex: 1 1;
+        background-color: $blue;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        @include atMediaQ(1000px){
+            display: block;
+        }
+    }
+
+    &__avatar img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-right: 1em;
+    }
+
+    @include atMediaQ{
+        &__text-info{
+            margin-top: 2em;
+        }
+    }
+
+    h1{
+        font-size: 1.5rem;
+        font-weight: 300;
+        @include atMediaQ(1000px){
+            font-size: 2.2rem;
+        }
+    }
+
+    .report-periods{
+        .buttons-list{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include atMediaQ(1000px){
+                display: block;
+                
+                li + li{
+                    margin-top: 1em;
+                }
+
+            }
+        }
+    }
+
+    button{
+        background-color: transparent;
+        border: none;
+        color: $desaturated-blue;
+        cursor: pointer;
+        transition: color 0.5s ease;
+
+        &[data-active = "yes"]{
+            color: $white;
+        }
+
+        @include atMediaQ(1000px){
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+   
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    min-height: 150px;
+
+    @include atMediaQ(620px){
+        min-height: 200px;
+        margin: 0;
+    }
+
+    z-index: 1;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 2em;
+        background-repeat: no-repeat;
+        background-position: 95% -40%;
+        border-radius: 12px;
+        z-index: -1;
+        @include atMediaQ(620px){
+            background-position: 95% -15%;
+        }
+    }
+
+    .content{
+        background-color: $dark-blue;
+        margin-top: auto;
+        padding: 1.5em;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+        @include atMediaQ(620px){
+            flex-basis: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include atMediaQ(1000px){
+            &:hover{
+                background-color: hsl(235, 46%, 35%);
+            }
+            
+            img:hover{
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+
+    .top, .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+
+
+    .bottom{
+        margin-top: 0.5em;
+        @include atMediaQ(620px){
+            flex-direction: column;
+            margin-top: auto;
+            align-items: flex-start;
+            
+            h2{
+                margin-bottom: 0.25em;
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    h3{
+        font-weight: 500;
+    }
+
+    h2{
+        font-weight: 300;
+        font-size: 2rem;
+    }
+}
+
+.work::before{
+    background-color: $work;
+    background-image: url("../images/icon-work.svg");
+}
+
+.play::before{
+    background-color: $play;
+    background-image: url("../images/icon-play.svg");
+}
+
+.study::before{
+    background-color: $study;
+    background-image: url("../images/icon-study.svg");
+}
+
+.exericse::before{
+    background-color: $exercise;
+    background-image: url("../images/icon-exercise.svg");
+    background-position: 95% -9%;
+}
+
+.social::before{
+    background-color: $social;
+    background-image: url("../images/icon-social.svg");
+    background-position: 95% -100%;
+    @include atMediaQ(620px){
+        background-position: 95% -30%;
+    }
+}
+
+.self-care::before{
+    background-color: $self-care;
+    background-image: url("../images/icon-self-care.svg");
+    background-position: 95% -30%;
+    @include atMediaQ(620px){
+        background-position: 95% -10%;
+    }
+}
+

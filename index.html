@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; color: white; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script defer src="./main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+
+      <div class="user">
+        <div class="user__info">
+          <div class="user__avatar"><img src="./images/image-jeremy.png" alt="Jeremy image"></div>
+          <div class="user__text-info">
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </div>
+        <div class="report-periods">
+          <ul class="buttons-list">
+            <li><button id="daily">Daily</button></li>
+            <li><button data-active= "yes" id="weekly">Weekly</button></li>
+            <li><button id="monthly">Monthly</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card work">
+        <div class="content">
+          <div class="top">
+            <h3>Work</h3>
+            <img src="./images/icon-ellipsis.svg" alt="ellpisis icon">
+          </div>
+          <div class="bottom">
+            <h2><span class="current-time">00</span>hrs</h2>
+            <p><span class="period">Last week</span> - <span class="previous-time">00</span>hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card play">
+        <div class="content">
+          <div class="top">
+            <h3>Play</h3>
+            <img src="./images/icon-ellipsis.svg" alt="ellpisis icon">
+          </div>
+          <div class="bottom">
+            <h2><span class="current-time">00</span>hrs</h2>
+            <p><span class="period">Last week</span> - <span class="previous-time">00</span>hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card study">
+        <div class="content">
+          <div class="top">
+            <h3>Study</h3>
+            <img src="./images/icon-ellipsis.svg" alt="ellpisis icon">
+          </div>
+          <div class="bottom">
+            <h2><span class="current-time">00</span>hrs</h2>
+            <p><span class="period">Last week</span> - <span class="previous-time">00</span>hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card exericse">
+        <div class="content">
+          <div class="top">
+            <h3>Exericse</h3>
+            <img src="./images/icon-ellipsis.svg" alt="ellpisis icon">
+          </div>
+          <div class="bottom">
+            <h2><span class="current-time">00</span>hrs</h2>
+            <p><span class="period">Last week</span> - <span class="previous-time">00</span>hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="card social">
+        <div class="content">
+          <div class="top">
+            <h3>Social</h3>
+            <img src="./images/icon-ellipsis.svg" alt="ellpisis icon">
+          </div>
+          <div class="bottom">
+            <h2><span class="current-time">00</span>hrs</h2>
+            <p><span class="period">Last week</span> - <span class="previous-time">00</span>hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="card self-care">
+        <div class="content">
+          <div class="top">
+            <h3>Self Care</h3>
+            <img src="./images/icon-ellipsis.svg" alt="ellpisis icon">
+          </div>
+          <div class="bottom">
+            <h2><span class="current-time">00</span>hrs</h2>
+            <p><span class="period">Last week</span> - <span class="previous-time">00</span>hrs</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+</html>
